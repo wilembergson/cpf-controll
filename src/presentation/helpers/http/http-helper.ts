@@ -27,3 +27,8 @@ export const noContent = (): HttpResponse => ({
   statusCode: 204,
   body: null
 })
+
+export const emptyList = (): HttpResponse => ({
+  statusCode: 200,
+  body: []
+})
