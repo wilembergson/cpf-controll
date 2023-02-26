@@ -32,6 +32,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "cpf-cnpj-validator": "^1.0.3",
     "mongodb": "^4.13.0"
   }
 }

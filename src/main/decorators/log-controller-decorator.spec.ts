@@ -47,7 +47,7 @@ const makeFakeRequest = (): HttpRequest => ({
 
 const makeFakeCpf = (): CpfModel => ({
   cpf: '11122233344',
-  date: new Date()
+  createdAt: new Date()
 })
 
 const makeFakeServerError = (): HttpResponse => {

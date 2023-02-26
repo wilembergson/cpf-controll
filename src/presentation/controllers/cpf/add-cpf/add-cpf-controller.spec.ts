@@ -7,7 +7,7 @@ const date = new Date()
 const makeFakeRequest = (): HttpRequest => ({
     body: {
         cpf: '11122233344',
-        date
+        createdAt: date
     }
 })
 

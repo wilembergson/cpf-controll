@@ -1,4 +1,4 @@
 export type CpfModel = {
     cpf:string,
-    date: Date
+    createdAt: Date
 }

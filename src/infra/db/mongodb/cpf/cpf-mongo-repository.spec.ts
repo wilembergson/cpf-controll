@@ -25,7 +25,7 @@ describe('Survey Mongo Repository', () => {
             const sut = makeSut()
             await sut.add({
                 cpf: '11122233344',
-                date: new Date()
+                createdAt: new Date()
             })
             const cpf = await cpfCollection.findOne({ cpf: '11122233344' })
             expect(cpf).toBeTruthy()

@@ -4,7 +4,7 @@ import MockDate from 'mockdate'
 
 const makeFakeSurveyData = (): AddCpfModel => ({
     cpf:'11223344',
-    date: new Date()
+    createdAt: new Date()
 })
 
 const makeAddSurveyRepository = (): AddCpfRepository => {
