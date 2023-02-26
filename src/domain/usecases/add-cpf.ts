@@ -1,6 +1,6 @@
 export type AddCpfModel = {
     cpf:string,
-    createdAt: Date
+    createdAt: string
 }
 
 export interface AddCpf {

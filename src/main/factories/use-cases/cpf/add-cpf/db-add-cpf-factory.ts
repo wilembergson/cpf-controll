@@ -1,4 +1,4 @@
-import { DbAddCpf } from "../../../../../data/use-cases/db-add-cpf";
+import { DbAddCpf } from "../../../../../data/use-cases/add-cpf/db-add-cpf";
 import { AddCpf } from "../../../../../domain/usecases/add-cpf";
 import { CpfMongoRepository } from "../../../../../infra/db/mongodb/cpf/cpf-mongo-repository";
 

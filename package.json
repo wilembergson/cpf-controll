@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "cpf-cnpj-validator": "^1.0.3",
+    "date-fns": "^2.29.3",
     "mongodb": "^4.13.0"
   }
 }
