@@ -9,7 +9,7 @@ describe('Mongo Helper', () => {
   })
 
   it('should reconnect if mongo is down', async () => {
-    const accountCollection = await MongoHelper.getCollection('accounts')
+    const accountCollection = await MongoHelper.getCollection('cpf')
     expect(accountCollection).toBeTruthy()
   })
 })
