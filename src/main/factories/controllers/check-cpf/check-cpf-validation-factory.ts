@@ -1,14 +1,13 @@
 import { CpfValidatorAdapter } from "../../../../infra/validators/cpf-validator-adapter";
 import { ExistentCpfValidatorAdapter } from "../../../../infra/validators/existent-cpf-validator-adapter";
 import { Validation } from "../../../../presentation/protocols";
-import { CpfFormatValidation, RequiredFieldValidation, ValidationComposite } from "../../../../validators";
+import { CpfFormatValidation, ValidationComposite } from "../../../../validators";
 import { ExistentCpfValidation } from "../../../../validators/existent-cpf-validation";
-import { makeDbCheckCpf } from "../../use-cases/cpf/check-cpf/db-check-cpf-factory";
+import { makeDbFindCpf } from "../../use-cases/cpf/find-cpf.ts/db-find-cpf-factory";
 
 export const makeCheckCpfValidation = (): ValidationComposite => {
   const validations: Validation[] = []
- 
   validations.push(new CpfFormatValidation('cpf', new CpfValidatorAdapter()))
-  validations.push(new ExistentCpfValidation('cpf', new ExistentCpfValidatorAdapter(makeDbCheckCpf())))
+  validations.push(new ExistentCpfValidation('cpf', new ExistentCpfValidatorAdapter(makeDbFindCpf())))
   return new ValidationComposite(validations)
 }
