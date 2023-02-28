@@ -3,6 +3,7 @@ import { CpfModel } from "../../domain/model/cpf-model"
 import { ok, serverError } from "../../presentation/helpers/http/http-helper"
 import { Controller, HttpRequest, HttpResponse } from "../../presentation/protocols"
 import { LogControllerDecorator } from "./log-controller-decorator"
+import {format} from 'date-fns'
 
 type SutStub = {
   sut: LogControllerDecorator
@@ -47,7 +48,7 @@ const makeFakeRequest = (): HttpRequest => ({
 
 const makeFakeCpf = (): CpfModel => ({
   cpf: '11122233344',
-  createdAt: new Date()
+  createdAt: format(new Date, "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
 })
 
 const makeFakeServerError = (): HttpResponse => {

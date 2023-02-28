@@ -35,6 +35,5 @@ export class CpfMongoRepository implements AddCpfRepository, ListCpfRepository, 
         const result = await cpfCollection.deleteOne({
             cpf: data
         })
-        console.log(result)
     }
 }

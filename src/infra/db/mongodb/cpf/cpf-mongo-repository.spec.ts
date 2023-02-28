@@ -1,6 +1,7 @@
 import { Collection } from "mongodb"
 import { MongoHelper } from "../helpers/mongo-helper"
 import { CpfMongoRepository } from "./cpf-mongo-repository"
+import { format} from 'date-fns'
 
 let cpfCollection: Collection
 
@@ -25,33 +26,10 @@ describe('Survey Mongo Repository', () => {
             const sut = makeSut()
             await sut.add({
                 cpf: '11122233344',
-                createdAt: new Date()
+                createdAt: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
             })
             const cpf = await cpfCollection.findOne({ cpf: '11122233344' })
             expect(cpf).toBeTruthy()
         })
     })
-
-    /*describe('loadAll()', () => {
-        it('should load all surveys on success', async () => {
-            await cpfCollection.insertMany([{
-                cpf: '11122233344',
-                date: new Date()
-            },{
-                cpf: '11122233355',
-                date: new Date()
-            }])
-            const sut = makeSut()
-            const surveys = await sut.loadAll()
-            expect(surveys.length).toBe(2)
-            expect(surveys[0].question).toBe('any_question')
-            expect(surveys[1].question).toBe('other_question')
-        })
-
-        it('should load empty list', async () => {
-            const sut = makeSut()
-            const surveys = await sut.loadAll()
-            expect(surveys.length).toBe(0)
-        })
-    })*/
 })

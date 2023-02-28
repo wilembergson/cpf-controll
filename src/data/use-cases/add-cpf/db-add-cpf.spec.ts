@@ -1,10 +1,11 @@
 import { DbAddCpf } from "./db-add-cpf"
 import { AddCpfModel, AddCpfRepository } from "./db-add-cpf-protocols"
 import MockDate from 'mockdate'
+import { format } from 'date-fns'
 
 const makeFakeSurveyData = (): AddCpfModel => ({
     cpf:'11223344',
-    createdAt: new Date().toString()
+    createdAt: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSSxxx")
 })
 
 const makeAddSurveyRepository = (): AddCpfRepository => {
